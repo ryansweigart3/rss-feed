@@ -28,7 +28,7 @@ func organizeLinks() (map[string]string) {
   return m
 }
 
-func sendCSV() {
+func createCSV() {
   m := organizeLinks()
 
   csvFile, err := os.Create("email-send/file.csv")
@@ -53,12 +53,5 @@ func sendCSV() {
 }
 
 func main() {
-
-  sendCSV()
-
-  fmt.Println(organizeLinks())
-
-	// time.Sleep(3 * time.Second)
-
-	// organizeLinks()
+  createCSV()
 }
